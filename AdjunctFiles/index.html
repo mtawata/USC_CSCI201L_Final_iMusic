@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	//Really we can do this in two ways:
+	//1) do it through Javascript or
+	//2) directly in the form header: <form action="/action_page.jsp" method="post">
+	function validate() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		var xhttp = new XMLHttpRequest();
+	
+		var params = "username="+username+"&password="+password;
+		xhttp.open("POST", "Authenticate?"+params, false);
+		
+		xhttp.send();
+		
+		var response = xhttp.responseText.trim();
+		
+		clearAll();
+		
+		if(response.length > 0){
+			if(response.includes("password") && response.includes("username")){
+				document.getElementById("passError").innerHTML = "NO MATCHING PASSWORD";
+				document.getElementById("userError").innerHTML = "NO MATCHING USER";
+			} else if(response.includes("password")){
+				document.getElementById("passError").innerHTML = "NO MATCHING PASSWORD";
+			} else if(response.includes("username")){
+				document.getElementById("passError").innerHTML = "NO MATCHING USER";
+			} else {
+				//document.getElementById("success").innerHTML = "Authenticated!";
+				
+				/*This is how you redirect from servlet:
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        				dispatcher.forward(request, response);
+				*/
+				window.location.href = 'home.jsp';
+			}
+		}
+	}
+	
+	function clearAll(){
+		document.getElementById("passError").innerHTML = "";
+		document.getElementById("userError").innerHTML = "";
+		document.getElementById("success").innerHTML = "";
+	}
+	
+
+
+</script>
+
+
+
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<form>
+		<h4>Form Validation Through AJAX</h4>
+		<input type = "text" value = "Enter Username" id = "username"><br/>
+		<div id = "userError"></div><br/>
+		<input type = "text" value = "Enter Password" id = "password"><br/>
+		<div id = "passError"></div><br/>
+		<input type = "button" value = "Click me!" onclick = "validate()"><br/>
+		<div id = "success"></div>
+	</form>
+</body>
+</html>

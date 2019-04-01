@@ -1,0 +1,10 @@
+To construct database:
+Make database named: imusic
+Make table named: users
+Make rows:
+username --> not null, varchar 25
+password --> not null, varchar 25
+name --> not null, varchar 50
+bio --> can be null, TEXT
+songs --> can be null, TEXT
+picture --> can be null. TEXT

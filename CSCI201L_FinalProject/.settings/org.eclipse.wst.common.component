@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CSCI201L_FinalProject">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="mysql-connector-java-5.1.44-bin.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/brandondalton/Documents/USC-Programming/CSCI-201/mysql-connector-java-5.1.44-bin.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="CSCI201L_FinalProject"/>
+        <property name="java-output-path" value="/CSCI201L_FinalProject/build/classes"/>
+    </wb-module>
+</project-modules>

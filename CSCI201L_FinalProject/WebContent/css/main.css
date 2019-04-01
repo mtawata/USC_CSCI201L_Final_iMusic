@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+html {
+	background: linear-gradient(
+      rgba(255, 255, 255, 0.12), 
+      rgba(255, 255, 255, 0.12)
+    ), url("../images/background.jpg");
+    background-size: cover;
+}
+
+/* ----------- Screens ----------- */
+@media screen 
+  and (min-width: 900px) { 
+  #navBarTitle {
+	margin-left: 20px;
+  }
+}
+
+ #songuploadTitle, #loginTitle {
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+#loginSubTitle {
+	color: white;
+	font-weight: 50px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+#navBarTitle {
+	color: white;
+  }
+  
+#iMusicNav {
+	background-color: black;
+}
+
+#iMusicNav ul li a {
+	color: white;
+}
+
+#formButton {
+	padding-top: 10px;
+}
+
+.homerow {
+	font-size: 1em;
+}
+
+#homeDiv, #loginForm {
+	width: 70%;
+	margin: 0 auto;
+	float: center;
+	background-color: white;
+	padding: 30px;
+	border-radius: 30px;
+}
+
+#songuploadForm, #registerForm {
+	width: 70%;
+	margin: 0 auto;
+	float: center;
+	background-color: white;
+	padding: 30px;
+	border-radius: 30px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
